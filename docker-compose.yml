@@ -1,0 +1,14 @@
+version: "1.0"
+
+services:
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+
+  app:
+    build: .
+    depends_on:
+      - mongodb
+    ports:
+      - "8080:8080"
