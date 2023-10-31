@@ -4,6 +4,7 @@ go 1.21
 
 require (
 	github.com/gin-gonic/gin v1.9.1
+	github.com/line/line-bot-sdk-go v7.8.0+incompatible
 	go.mongodb.org/mongo-driver v1.12.1
 )
 

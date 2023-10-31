@@ -4,6 +4,7 @@ import (
 	"context"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
+	"log"
 )
 
 type MongoRepository struct {
@@ -17,7 +18,9 @@ func NewMongoRepository(client *mongo.Client) *MongoRepository {
 }
 
 func (r *MongoRepository) SaveMessage(ctx context.Context, message *Message) error {
-	collection := r.client.Database("local").Collection("startup_log")
+
+	log.Println(message)
+	collection := r.client.Database("local").Collection("user_info")
 
 	_, err := collection.InsertOne(ctx, message)
 	if err != nil {
